@@ -120,11 +120,19 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-muted rounded-xl h-48 flex items-center justify-center border border-border">
-                <p className="text-muted-foreground text-sm">
-                  Google Map will be added here
-                </p>
+              {/* Google Map */}
+              <div className="rounded-xl overflow-hidden border border-border h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.265588856342!2d73.91455931541671!3d18.562551287384868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdcc8e4d6c77e!2sBlue%20Sky%20School!5e0!3m2!1sen!2sin!4v1635774123456!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Blue Sky School Location"
+                  className="w-full h-full"
+                />
               </div>
             </motion.div>
 
