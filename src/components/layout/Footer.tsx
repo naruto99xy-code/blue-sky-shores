@@ -1,0 +1,92 @@
+import { Link } from "react-router-dom";
+import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-secondary text-secondary-foreground">
+      <div className="section-container py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-lg bg-primary-foreground flex items-center justify-center">
+                <GraduationCap className="w-6 h-6 text-secondary" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-lg leading-tight">
+                  Blue Sky
+                </span>
+                <span className="text-xs text-accent font-medium -mt-0.5">
+                  School
+                </span>
+              </div>
+            </Link>
+            <p className="text-sm text-secondary-foreground/80">
+              Education is the Only Solution
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {[
+                { name: "About Us", path: "/about" },
+                { name: "Academics", path: "/academics" },
+                { name: "Admissions", path: "/admissions" },
+                { name: "Gallery", path: "/gallery" },
+              ].map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-secondary-foreground/80 hover:text-accent transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-4">Contact Us</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm text-secondary-foreground/80">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <a href="mailto:blueskyschool0@gmail.com" className="hover:text-accent transition-colors">
+                  blueskyschool0@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-secondary-foreground/80">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>+91 XXXXX XXXXX</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-secondary-foreground/80">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>School Address, City, India</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Hours */}
+          <div>
+            <h4 className="font-heading font-semibold text-lg mb-4">School Hours</h4>
+            <ul className="space-y-2 text-sm text-secondary-foreground/80">
+              <li>Monday - Friday</li>
+              <li className="font-medium text-secondary-foreground">8:00 AM - 3:00 PM</li>
+              <li className="mt-4">Saturday</li>
+              <li className="font-medium text-secondary-foreground">8:00 AM - 12:00 PM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-secondary-foreground/20 text-center text-sm text-secondary-foreground/60">
+          <p>© {new Date().getFullYear()} Blue Sky School. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
